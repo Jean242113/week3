@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar-title">My Website</div>
+        <img src="burger-menu-icon.png" alt="Menu" class="burger-menu-icon" id="burgerMenuIcon">
+        <div class="navbar-menu">
+            <a href="#">Item 1</a>
+            <a href="#">Item 2</a>
+            <a href="#">Item 3</a>
+            <a href="#">Item 4</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <div class="welcome-text">Welcome to MyHome</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Small Boxes -->
+        <div class="small-box-container">
+
+        </div>
+
+        <!-- Big Boxes -->
+        <div class="big-box-container">
+
+        </div>
+    </div>
+    <div class="popup-menu hidden" id="popupMenu">
+        <div class="popup-header">
+
+            <img src="close-icon.png" alt="Close" class="close-icon" id="closeIcon">
+        </div>
+        <ul class="menu-list">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 4</a></li>
+        </ul>
+    </div>
+    <div class="button-container">
+        <button class="load-button" onclick="createBigBox()">Load more</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
