@@ -87,4 +87,6 @@ const createBigBox = function () {
         });
 };
 
-document.addEventListener("DOMContentLoaded", createData());
+document.addEventListener("DOMContentLoaded", createData);
+// window.onload = createData();
+// 也可以使用這個，載入的時間點不同，須待所有元素完成才會執行程式
