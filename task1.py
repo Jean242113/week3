@@ -26,7 +26,7 @@ def create_spot_csv(data1, data2, file_name):
         for spot in data1:
             spot_title = spot.get("stitle")
             for mrt in data2:
-                if mrt["MRT"] in spot.get("info"):
+                if mrt["SERIAL_NO"] == spot.get("SERIAL_NO"):
                     district = [
                         district
                         for district in [
@@ -64,19 +64,15 @@ def create_spot_csv(data1, data2, file_name):
 # Processing the data to create mrt.csv
 def create_mrt_csv(data1, data2, file_name):
     mrt_dict = {}
-    for spot in data2:
-        mrt_station = spot.get("MRT")
+    for mrt in data2:
+        mrt_station = mrt.get("MRT")
         if mrt_station:
             if mrt_station not in mrt_dict:
                 mrt_dict[mrt_station] = []
 
-    for spot in data1:
-        mrt_station = spot.get("info")
-        if mrt_station:
-            for key in mrt_dict.keys():
-                if key in mrt_station:
-                    mrt_dict[key].append(spot.get("stitle"))
-                    break
+            for spot in data1:
+                if mrt["SERIAL_NO"] == spot["SERIAL_NO"]:
+                    mrt_dict[mrt_station].append(spot.get("stitle"))
 
     with open(file_name, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
